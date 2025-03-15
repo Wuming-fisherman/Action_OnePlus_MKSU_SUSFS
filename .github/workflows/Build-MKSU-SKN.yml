@@ -73,6 +73,13 @@ jobs:
           remove-haskell: 'true'
           remove-codeql: 'true'
 
+      - name: Create swap file
+        run: |
+         sudo fallocate -l 6G /swapfile
+         sudo chmod 600 /swapfile
+         sudo mkswap /swapfile
+         sudo swapon /swapfile
+
       - name: Configure Git
         run: |
          git config --global user.name "ychenxuan"
