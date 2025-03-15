@@ -126,7 +126,7 @@ jobs:
           #sed -i "s/DKSU_VERSION=16/DKSU_VERSION=12581/" kernel/Makefile
           
       - name: Apply SUSFS Patches KernelSU-Next
-        if: ${{ (inputs.kernelsu_variant == 'KernerSU-Next') && github.event.inputs.SUSFS_ENABLED == 'true' }}
+        if: ${{ (inputs.kernelsu_variant == 'KernelSU-Next') && github.event.inputs.SUSFS_ENABLED == 'true' }}
         run: |
           cd kernel_workspace
           git clone https://gitlab.com/simonpunk/susfs4ksu.git -b gki-${{ github.event.inputs.ANDROID_VERSION }}-${{ github.event.inputs.KERNEL_VERSION }}
