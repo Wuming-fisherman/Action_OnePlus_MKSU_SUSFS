@@ -111,7 +111,7 @@ jobs:
         run: |
           if [[ "${{ github.event.inputs.kernelsu_version }}" == "tag" ]]; then
             echo "BRANCH=-" >> $GITHUB_ENV
-          elif [[ "${{ github.event.inputs.kernelsu_version }}" == "main" ]]; then
+          elif [[ "${{ github.event.inputs.kernelsu_version }}" == "next-susfs-dev" ]]; then
             echo "BRANCH=-s susfs-dev" >> $GITHUB_ENV
           fi
           
