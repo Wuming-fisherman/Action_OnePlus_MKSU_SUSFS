@@ -55,7 +55,13 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-
+      - name: Create Swap
+        run: |
+         sudo fallocate -l 2G /swapfile
+         sudo chmod 600 /swapfile
+         sudo mkswap /swapfile
+         sudo swapon /swapfil
+         
       - name: Configure Git
         run: |
          git config --global user.name "build"
